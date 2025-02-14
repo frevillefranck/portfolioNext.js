@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { ArrowDown } from 'lucide-react';
 
 export function Hero() {
@@ -13,20 +14,25 @@ export function Hero() {
   };
 
   return (
-    <section
-      id="accueil"
-      className="relative min-h-screen flex items-center justify-center pt-16 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/hero.webp')`,
-      }}
-    >
+    <section id="accueil" className="relative min-h-screen flex items-center justify-center pt-16">
+      {/* Image d'arrière-plan optimisée */}
+      <Image
+        src="/images/hero.webp"
+        alt="Développeur Web Freelance"
+        fill
+        priority
+        className="object-cover object-center absolute inset-0 -z-10"
+      />
+
+      {/* Overlay sombre */}
+      <div className="absolute inset-0 bg-black bg-opacity-70 -z-10"></div>
+
       <div className="container mx-auto px-4 text-center relative z-10">
         <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-white">
           Développeur Web Freelance
         </h1>
         <p className="text-xl lg:text-2xl mb-12 max-w-2xl mx-auto text-gray-200">
-          Je vous accompagne dans la création de sites web modernes et
-          performants, adaptés à vos besoins.
+          Je vous accompagne dans la création de sites web modernes et performants, adaptés à vos besoins.
         </p>
         
         {/* Bouton pour scroller vers Contact */}

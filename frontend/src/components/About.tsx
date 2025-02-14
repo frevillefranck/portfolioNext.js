@@ -1,5 +1,6 @@
 import React from 'react';
 import { User, Coffee, Rocket } from 'lucide-react';
+import Image from 'next/image';
 
 export function About() {
   return (
@@ -16,6 +17,13 @@ export function About() {
                     alt="Portrait du développeur"
                     className="w-full h-full object-cover"
                   />
+                  {/* <Image
+                    src="/images/profil.png"
+                    alt='Développeur Web Freelance Franck Fréville'
+                    fill
+                    priority
+                    className=' object-cover'
+                  /> */}
                 </div>
                 <div className="absolute inset-0 ring-8 ring-indigo-600 rounded-2xl transform -rotate-6 -z-10"></div>
               </div>

@@ -1,8 +1,25 @@
-// src/app/layout.tsx
+export const metadata = {
+  title: "Développeur Web Freelance | Fréville Franck",
+  description: "Je crée des sites modernes et performants avec React, Next.js et Tailwind CSS.",
+  keywords: "développement web, freelance, Next.js, React, Tailwind CSS",
+  openGraph: {
+    title: "Fréville Franck - Développeur Web Freelance",
+    description: "Je crée des sites modernes et performants avec React, Next.js et Tailwind CSS.",
+    url: "https://frevillefranck.fr",
+    type: "website",
+    images: [
+      {
+        url: "/images/logo.ico", // Image affichée sur les réseaux sociaux
+        width: 1200,
+        height: 630,
+        alt: "Fréville Franck - Développeur Web Freelance",
+      },
+    ],
+  },
+};
+
 import { ReactNode } from 'react';
 import '../styles/global.css';
-import Navbar from '@/components/NavBar';
-import Footer from '@/components/Footer';
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr"> 
@@ -14,3 +31,4 @@ export default function Layout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
