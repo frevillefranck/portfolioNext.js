@@ -1,33 +1,42 @@
 "use client";
-import React, { useState } from 'react';
-import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from "react";
+import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+
+// Définition de l'interface
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  url: string;
+}
 
 export function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const projects = [
+  const projects: Project[] = [
     {
-      title: 'Portfolio React',
-      description: 'Un site portfolio créé avec Next.js et Tailwind CSS.',
-      image: '/images/portfolio.png',
-      tags: ['Next.js', 'Tailwind CSS'],
-      url: 'https://frevillefranck.fr',
+      title: "Portfolio React",
+      description: "Un site portfolio créé avec Next.js et Tailwind CSS.",
+      image: "/images/portfolio.png",
+      tags: ["Next.js", "Tailwind CSS"],
+      url: "https://frevillefranck.fr",
     },
     {
       title: "Un Monde Qui S'Illumine",
       description:
         "Un site catalogue d'objets personnalisables réalisé avec React, Tailwind CSS et Strapi.",
-      image: '/images/unmondequisillumine.png',
-      tags: ['React', 'Tailwind CSS', 'Strapi'],
-      url: 'https://unmondequisillumine.fr',
+      image: "/images/unmondequisillumine.png",
+      tags: ["React", "Tailwind CSS", "Strapi"],
+      url: "https://unmondequisillumine.fr",
     },
     {
-      title: 'Sarah et la Pâtisserie',
+      title: "Sarah et la Pâtisserie",
       description:
         "Un site vitrine d'une pâtissière qui partage ses réalisations. Réalisé avec React, Tailwind CSS et Strapi",
-      image: '/images/sarahetlapatisserie.png',
-      tags: ['React', 'Tailwind CSS', 'Strapi'],
-      url: 'https://sarahetlapatisserie.fr',
+      image: "/images/sarahetlapatisserie.png",
+      tags: ["React", "Tailwind CSS", "Strapi"],
+      url: "https://sarahetlapatisserie.fr",
     },
   ];
 
@@ -43,7 +52,7 @@ export function Projects() {
     );
   };
 
-  const ProjectCard = ({ project }) => (
+  const ProjectCard = ({ project }: { project: Project }) => (
     <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
       <img
         src={project.image}
@@ -113,7 +122,7 @@ export function Projects() {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2 w-2 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-indigo-600' : 'bg-gray-300'
+                    index === currentIndex ? "bg-indigo-600" : "bg-gray-300"
                   }`}
                   aria-label={`Go to project ${index + 1}`}
                 />
